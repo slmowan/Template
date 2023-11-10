@@ -1,0 +1,162 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 300}
+\chead{Chesyti Brown}
+\rhead{\today}
+ 
+% \maketitle
+ 
+\begin{theorem}{2.3} %You can use theorem, proposition, exercise, o reflection here.  Modify x.yz to be whatever number you are proving
+DeMorgan's Laws for sets. Let A and B be sets. Then we have
+
+1. $\overline{A \cup B}$ = $\overline{A} \cap \overline{B}$
+
+2. $\overline{A \cap B}$ = $\overline{A} \cup \overline{B}$
+
+\end{theorem} 
+
+\begin{proof}
+
+
+	To prove that $\overline{A \cup B}$ = $\overline{A} \cap \overline{B}$ , we start by showing that each set is a subset of the other.The definition of a subset states that A is a subset of B if every element $a \in A$ is also an element of B. Since A and B are sets, if $A \subset B$ and $B \subset A$, then A = B. \\
+	
+    Suppose $x \in \overline{A \cup B}$ , which means $x \notin A \cup B$. Then $x \notin A$ and $x \notin B$. Hence, $x \in \overline{A}$ and $x \in \overline{B}$. This means $x \in \overline{A \cap B}$. Thus, $\overline{A \cup B} \subset \overline{A} \cap \overline{B}$. Now suppose, $x \in \overline{A} \cap \overline{B}$. Then $x \in \overline{A}$ and $x \in \overline{B}$. Hence $x \notin A$ and $x \notin B$, which means that $x \notin A \cup B$. Therefore, $x \in \overline{A \cup B}$. Thus proving that $\overline{A \cup B}$ = $\overline{A} \cap \overline{B}$.\\
+
+	To prove that $\overline{A \cap B}$ = $\overline{A} \cup \overline{B}$ , we start by showing that each set is a subset of the other. Suppose $x \in \overline{A \cap B}$ , which means $x \notin A \cap B$. Then $x \notin A$ and $x \notin B$. Hence, $x \in \overline{A}$ and $x \in \overline{B}$. This means $x \in \overline{A \cup B}$. Thus, $\overline{A \cap B} \subset \overline{A} \cup \overline{B}$. Now suppose, $x \in \overline{A} \cup \overline{B}$. Then $x \in \overline{A}$ and $x \in \overline{B}$. Hence $x \notin A$ and $x \notin B$, which means that $x \notin A \cap B$. Therefore, $x \in \overline{A \cap B}$. Thus proving that $\overline{A \cap B}$ = $\overline{A} \cup \overline{B}$.
+%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+
+\end{proof}
+ 
+\begin{theorem}{4.4}
+Let a,b and c $\in \mathbb{Z}$. If a divides b and b divides c then a divides c.
+
+
+\end{theorem}
+ 
+\begin{proof}[Proof]%Whatever you put in the square brackets will be the label for the block of text to follow in the proof environment.
+Assume a divides b and b divides c. Since a divides b, there exists $n_1$ $\in \mathbb{Z}$ such that a$n_1$=b. Since b divides c, there exists $n_2$ such that b$n_2$=c.Since we know the existential statement is true in the universe you can use it to create an instance of an object with the property it describes. So, we let m=$n_1n_2$.Then \\
+
+					am= {$an_1n_2$} = {$bn_2$} = c \\
+
+Since am=c, we have shown that a divides c.
+
+\end{proof}
+
+\begin{theorem}{7.11}
+Suppose that R is a relation on A. Then R is both symmetric and anti-symmetric, if and only if $R \subset $ $Id_A$.
+
+\end{theorem}
+
+
+\begin{proof}[Proof]
+	
+    
+    Assume R is symmetric and anti-symmetric. This means that all ordered pairs (a,b) $\in$ R, there must be a pair (b,a) $\in$ R, and this can only be true when a=b. This means every ordered pair in R is a value a$\in$ A relates to itself. Since the $Id_A$ is a relation that includes every value in A related to itself, R must be a subset of $Id_A$. 
+	
+    
+    Assume R $\subset$ $Id_A$. This means that R can only have elements that are also in $Id_A$. Therefore every element of R is an ordered pair (a,b) $\in$ A where a=b. Since a=b in every element of R, it satisfied the conditions for anti-symmetry. Also, Since (a,b) = (b,a) , R also satisfies the conditions for symmetry. 
+  
+
+\end{proof}
+
+
+\begin{theorem}{10.9}
+
+Let x $\neq$ 1 be any real number. For all natural numbers n we have 
+	
+$\frac{x^{n}-1}{x-1}$ = ${x^{n-1}}$+${x^{n-2}}$+...+$x^{2}$+$x$+1
+
+\end{theorem}
+
+\begin{proof}[Proof]
+First, we define set S as the set {n$\in$ $\mathbb{N}$} such that $\sum_{k=1}^{n}x^{k-1}= \frac{x^{n-1}}{x-1}$ 
+
+I will induct on $n$ \\
+\textbf{Base Case (n=1): } $\sum_{k=1}^{1}x^{k-1} = \frac{x^{1}-1}{x-1}=1$\\
+
+\textbf{Inductive Hypothesis: } Assume $\sum_{k=1}^{n}x^{k-1}= \frac{x^{n-1}}{x-1}$ holds for n. \\
+
+\textbf{Inductive Step: } We want to show $\sum_{k=1}^{n+1}x^{k-1}= \frac{x^{n+1}}{x-1}$ \\
+$=\frac{x^{n+1}-x^{n}+x^{n-1}}{x-1}$\\
+$=\frac{x(x^{n})-x^{n}+x^{n}-1}{x-1}$\\
+$=\frac{x(x^{n})}{x-1}$-$\frac{x^{n}}{x-1}$+$\frac{x^{n-1}}{x-1}$\\
+=$\sum_{k=1}^{n}x^{k-1}$+$\frac{x(x^{n})}{x-1}$-$\frac{x^{n}}{x-1}$\\
+=$\sum_{k=1}^{n}x^{k-1}$+$x^{n}$\\
+=$1$ + $x^{1}$ + $x^{2}$ + ... +$x^{n-2}$+$x^{n-1}$+$x^{n}$\\
+=$\sum_{k=1}^{n+1}x^{k-1}$\\
+Therefore, $S$=$\mathbb{N}$.
+
+\end{proof}
+ 
+\begin{theorem}{3.2}
+If $\mathcal{F}$ is a family of sets and A $\in$ $\mathcal{F}$ then A $\subset$ $\cup$$\mathcal{F}$.
+
+\end{theorem}
+
+\begin{proof}[Proof]
+Let x$\in$ A be arbitrary.We know A$\in$$\mathcal{F}$.Therefore, we know that there exists A $\in$$\mathcal{F}$ such that x$\in$ A. Therefore by definition of $\cup$$\mathcal{F}$, which states that the union of $\mathcal{F}$ is the collections of all sets that are elements of $\mathcal{F}$ where there exists x$\in$A for some A$\in$$\mathcal{F}$, x $\in$$\cup$$\mathcal{F}$. Since x is arbitrary, we have shown that A $\subset$ $\cup$$\mathcal{F}$.
+
+\end{proof}
+
+\begin{theorem}{6.1}
+If $0< a < b$ where a and b are real numbers, then $a^{2} < b^{2}$.
+
+
+\end{theorem}
+
+\begin{proof}[Proof]
+We assume that $b > a > 0$. Since $a > 0$, if we multiply both sides of $b > a$ by a, we get $ab > a^{2}$. Similarly, since $b > 0$, if we multiply both sides of $b > a$ by b, we get $b^{2} > ab$. We can combine $ab > a^{2}$ and $b^{2} > ab$ to get $b^{2} > ab > a^{2}$. Therefore by the transitive property, $b^{2} > a^{2}$. Thus we have shown that if $b > a > 0$, then $b^{2} > a^{2}$.
+
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+
+
+\end{document}
